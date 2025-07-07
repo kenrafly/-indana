@@ -29,7 +29,7 @@ export default function Home() {
               src="/cooking-oil.png"
               alt="Indana Minyak Goreng"
               fill
-              className="object-contain rounded-lg shadow-lg"
+              className="object-contain rounded-lg"
               priority
             />
           </div>
