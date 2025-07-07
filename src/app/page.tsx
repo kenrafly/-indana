@@ -26,7 +26,7 @@ export default function Home() {
           </div>
           <div className="relative h-64 md:h-94">
             <Image
-              src="/cooking.png"
+              src="/cooking-oil.png"
               alt="Indana Minyak Goreng"
               fill
               className="object-cover rounded-lg shadow-lg"
