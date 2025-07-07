@@ -1,7 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
   return (
     <header className="bg-white shadow-sm py-4">
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -44,8 +52,11 @@ export default function Header() {
         </nav>
 
         <div className="md:hidden">
-          {/* Mobile menu button - to be implemented */}
-          <button className="text-gray-800 hover:text-yellow-600">
+          <button
+            className="text-gray-800 hover:text-yellow-600"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -63,6 +74,42 @@ export default function Header() {
           </button>
         </div>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-200">
+          <nav className="container mx-auto px-4 py-4 space-y-2">
+            <Link
+              href="/"
+              className="block text-gray-800 hover:text-yellow-600 font-medium transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Beranda
+            </Link>
+            <Link
+              href="/produk"
+              className="block text-gray-800 hover:text-yellow-600 font-medium transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Produk
+            </Link>
+            <Link
+              href="/tentang-kami"
+              className="block text-gray-800 hover:text-yellow-600 font-medium transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Tentang Kami
+            </Link>
+            <Link
+              href="/kontak"
+              className="block text-gray-800 hover:text-yellow-600 font-medium transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Kontak
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
