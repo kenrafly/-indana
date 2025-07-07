@@ -1,15 +1,29 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import FadeIn from "./animations/FadeIn";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-800 text-white py-12">
+    <motion.footer
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="bg-gray-800 text-white py-12"
+    >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and brief description */}
-          <div className="col-span-1 md:col-span-1">
+          <FadeIn
+            delay={0.1}
+            direction="up"
+            className="col-span-1 md:col-span-1"
+          >
             <Link href="/" className="inline-block mb-4">
               <Image
                 src="/logo.svg"
@@ -22,71 +36,76 @@ export default function Footer() {
             <p className="text-sm text-gray-300 mt-2">
               Minyak goreng berkualitas untuk keluarga Indonesia
             </p>
-          </div>
+          </FadeIn>
 
           {/* Navigation Links */}
-          <div className="col-span-1">
+          <FadeIn delay={0.2} direction="up" className="col-span-1">
             <h3 className="text-lg font-semibold mb-4">Tautan</h3>
             <ul className="space-y-2">
-              <li>
+              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <Link
                   href="/"
                   className="text-gray-300 hover:text-yellow-400 transition-colors"
                 >
                   Beranda
                 </Link>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <Link
                   href="/produk"
                   className="text-gray-300 hover:text-yellow-400 transition-colors"
                 >
                   Produk
                 </Link>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <Link
                   href="/tentang-kami"
                   className="text-gray-300 hover:text-yellow-400 transition-colors"
                 >
                   Tentang Kami
                 </Link>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <Link
                   href="/kontak"
                   className="text-gray-300 hover:text-yellow-400 transition-colors"
                 >
                   Kontak
                 </Link>
-              </li>
+              </motion.li>
             </ul>
-          </div>
+          </FadeIn>
 
-          {/* Contact Information */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Hubungi Kami</h3>
-            <address className="not-italic text-gray-300 space-y-2">
-              <p>Jl. Industri No. 123</p>
-              <p>Jakarta Selatan, 12345</p>
+          {/* Contact Info */}
+          <FadeIn delay={0.3} direction="up" className="col-span-1">
+            <h3 className="text-lg font-semibold mb-4">Kontak</h3>
+            <address className="not-italic text-sm text-gray-300 space-y-2">
+              <p>Jl. Industri Raya No. 123</p>
+              <p>Kawasan Industri Jababeka</p>
+              <p>Cikarang, Bekasi 17530</p>
               <p>Indonesia</p>
-              <p className="mt-2">Email: info@indana.co.id</p>
-              <p>Telepon: (021) 123-4567</p>
+              <p className="mt-4">
+                <span className="block">Tel: +62 21 8888 9999</span>
+                <span className="block">Email: info@indana.co.id</span>
+              </p>
             </address>
-          </div>
+          </FadeIn>
 
-          {/* Social Media */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Media Sosial</h3>
+          {/* Social Links */}
+          <FadeIn delay={0.4} direction="up" className="col-span-1">
+            <h3 className="text-lg font-semibold mb-4">Ikuti Kami</h3>
             <div className="flex space-x-4">
-              <a
+              <motion.a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-blue-500 transition-colors"
+                className="bg-gray-700 hover:bg-yellow-600 h-10 w-10 rounded-full flex items-center justify-center transition-colors"
+                whileHover={{ y: -5, backgroundColor: "#F59E0B" }}
+                transition={{ duration: 0.2 }}
               >
                 <svg
-                  className="h-6 w-6"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -97,15 +116,34 @@ export default function Footer() {
                     clipRule="evenodd"
                   />
                 </svg>
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-700 hover:bg-yellow-600 h-10 w-10 rounded-full flex items-center justify-center transition-colors"
+                whileHover={{ y: -5, backgroundColor: "#F59E0B" }}
+                transition={{ duration: 0.2 }}
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+              </motion.a>
+              <motion.a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-pink-500 transition-colors"
+                className="bg-gray-700 hover:bg-yellow-600 h-10 w-10 rounded-full flex items-center justify-center transition-colors"
+                whileHover={{ y: -5, backgroundColor: "#F59E0B" }}
+                transition={{ duration: 0.2 }}
               >
                 <svg
-                  className="h-6 w-6"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -116,31 +154,71 @@ export default function Footer() {
                     clipRule="evenodd"
                   />
                 </svg>
-              </a>
-              <a
-                href="https://twitter.com"
+              </motion.a>
+              <motion.a
+                href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-blue-400 transition-colors"
+                className="bg-gray-700 hover:bg-yellow-600 h-10 w-10 rounded-full flex items-center justify-center transition-colors"
+                whileHover={{ y: -5, backgroundColor: "#F59E0B" }}
+                transition={{ duration: 0.2 }}
               >
                 <svg
-                  className="h-6 w-6"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                 >
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
                 </svg>
-              </a>
+              </motion.a>
             </div>
-          </div>
+            <div className="mt-6">
+              <h4 className="text-sm font-semibold mb-2">
+                Berlangganan Newsletter
+              </h4>
+              <div className="flex">
+                <input
+                  type="email"
+                  placeholder="Email Anda"
+                  className="bg-gray-700 text-white px-3 py-2 rounded-l-md w-full focus:outline-none focus:ring-1 focus:ring-yellow-500"
+                />
+                <motion.button
+                  className="bg-yellow-600 hover:bg-yellow-700 px-4 py-2 rounded-r-md"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Kirim
+                </motion.button>
+              </div>
+            </div>
+          </FadeIn>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
-          <p>© {currentYear} PT Indana. Hak Cipta Dilindungi.</p>
+        <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+          <FadeIn delay={0.5} direction="up">
+            <p className="text-sm text-gray-400">
+              &copy; {currentYear} PT Indana. Hak Cipta Dilindungi.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.6} direction="up">
+            <div className="flex space-x-4 mt-4 md:mt-0">
+              <Link
+                href="/kebijakan-privasi"
+                className="text-sm text-gray-400 hover:text-yellow-400 transition-colors"
+              >
+                Kebijakan Privasi
+              </Link>
+              <Link
+                href="/syarat-ketentuan"
+                className="text-sm text-gray-400 hover:text-yellow-400 transition-colors"
+              >
+                Syarat & Ketentuan
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

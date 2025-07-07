@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { ReactNode } from "react";
+import { motion } from "framer-motion";
 
 interface ButtonProps {
   href?: string;
@@ -27,17 +30,32 @@ export default function Button({
 
   const buttonClass = `${baseStyles} ${variantStyles[variant]} ${className}`;
 
+  const buttonMotion = (
+    <motion.span
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="inline-block w-full"
+    >
+      {children}
+    </motion.span>
+  );
+
   if (href) {
     return (
       <Link href={href} className={buttonClass}>
-        {children}
+        {buttonMotion}
       </Link>
     );
   }
 
   return (
-    <button onClick={onClick} className={buttonClass}>
+    <motion.button
+      onClick={onClick}
+      className={buttonClass}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
       {children}
-    </button>
+    </motion.button>
   );
 }

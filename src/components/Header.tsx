@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,47 +12,60 @@ export default function Header() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
   return (
-    <header className="bg-white shadow-sm py-4">
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="bg-white shadow-sm py-4"
+    >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/logo.svg"
-            alt="Indana Logo"
-            width={150}
-            height={40}
-            className="h-10 w-auto"
-            priority
-          />
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.svg"
+              alt="Indana Logo"
+              width={150}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
+          </Link>
+        </motion.div>
 
         <nav className="hidden md:flex space-x-8">
-          <Link
-            href="/"
-            className="text-gray-800 hover:text-yellow-600 font-medium transition-colors"
-          >
-            Beranda
-          </Link>
-          <Link
-            href="/produk"
-            className="text-gray-800 hover:text-yellow-600 font-medium transition-colors"
-          >
-            Produk
-          </Link>
-          <Link
-            href="/tentang-kami"
-            className="text-gray-800 hover:text-yellow-600 font-medium transition-colors"
-          >
-            Tentang Kami
-          </Link>
-          <Link
-            href="/kontak"
-            className="text-gray-800 hover:text-yellow-600 font-medium transition-colors"
-          >
-            Kontak
-          </Link>
+          {["/", "/produk", "/tentang-kami", "/kontak"].map((href, index) => (
+            <motion.div
+              key={href}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
+            >
+              <Link
+                href={href}
+                className="text-gray-800 hover:text-yellow-600 font-medium transition-colors"
+              >
+                {href === "/"
+                  ? "Beranda"
+                  : href === "/produk"
+                  ? "Produk"
+                  : href === "/tentang-kami"
+                  ? "Tentang Kami"
+                  : "Kontak"}
+              </Link>
+            </motion.div>
+          ))}
         </nav>
 
-        <div className="md:hidden">
+        <motion.div
+          className="md:hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <button
             className="text-gray-800 hover:text-yellow-600"
             onClick={toggleMobileMenu}
@@ -72,44 +86,48 @@ export default function Header() {
               />
             </svg>
           </button>
-        </div>
+        </motion.div>
       </div>
 
       {/* Mobile Navigation Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          <nav className="container mx-auto px-4 py-4 space-y-2">
-            <Link
-              href="/"
-              className="block text-gray-800 hover:text-yellow-600 font-medium transition-colors py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Beranda
-            </Link>
-            <Link
-              href="/produk"
-              className="block text-gray-800 hover:text-yellow-600 font-medium transition-colors py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Produk
-            </Link>
-            <Link
-              href="/tentang-kami"
-              className="block text-gray-800 hover:text-yellow-600 font-medium transition-colors py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Tentang Kami
-            </Link>
-            <Link
-              href="/kontak"
-              className="block text-gray-800 hover:text-yellow-600 font-medium transition-colors py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Kontak
-            </Link>
-          </nav>
-        </div>
-      )}
-    </header>
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            className="md:hidden bg-white border-t border-gray-200"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <nav className="container mx-auto px-4 py-4 space-y-2">
+              {["/", "/produk", "/tentang-kami", "/kontak"].map(
+                (href, index) => (
+                  <motion.div
+                    key={href}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 * index }}
+                  >
+                    <Link
+                      href={href}
+                      className="block text-gray-800 hover:text-yellow-600 font-medium transition-colors py-2"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {href === "/"
+                        ? "Beranda"
+                        : href === "/produk"
+                        ? "Produk"
+                        : href === "/tentang-kami"
+                        ? "Tentang Kami"
+                        : "Kontak"}
+                    </Link>
+                  </motion.div>
+                )
+              )}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }
