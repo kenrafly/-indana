@@ -12,7 +12,7 @@ export default function KontakPage() {
   return (
     <>
       {/* Header Section */}
-      <Section background="light" padding="normal">
+      <Section background="dark" padding="normal">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-6">
             Hubungi Kami: Kami Siap Membantu Anda
@@ -132,9 +132,9 @@ export default function KontakPage() {
                 <div>
                   <h3 className="text-lg font-semibold mb-1">Alamat Kantor</h3>
                   <p className="text-gray-400">
-                    Jl. Industri No. 123
+                    Jl. Raya Bangkalan No. 123
                     <br />
-                    Jakarta Selatan, 12345
+                    Bangkalan, Jawa Timur 69116
                     <br />
                     Indonesia
                   </p>
@@ -218,13 +218,19 @@ export default function KontakPage() {
       </Section>
 
       {/* Google Map Section */}
-      <Section background="light" padding="normal">
+      <Section background="dark" padding="normal">
         <h2 className="text-3xl font-bold text-center mb-10">Lokasi Kami</h2>
         <div className="bg-black h-96 rounded-lg overflow-hidden border border-zinc-800">
-          {/* Placeholder for Google Map */}
-          <div className="w-full h-full flex items-center justify-center bg-zinc-900 text-gray-400">
-            <p className="text-xl">Peta Lokasi Akan Ditampilkan di Sini</p>
-          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.60707363315!2d112.73089085820312!3d-7.047891999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd805f8b7b2e5b3%3A0x4027a76e352e4b0!2sBangkalan%20Regency%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1704614400000!5m2!1sen!2sid"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Lokasi Indana di Bangkalan"
+          />
         </div>
       </Section>
     </>

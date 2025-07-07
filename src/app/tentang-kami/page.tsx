@@ -59,7 +59,7 @@ export default function TentangKamiPage() {
   return (
     <>
       {/* Header Section */}
-      <Section background="light" padding="normal">
+      <Section background="dark" padding="normal">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-6">
             Mengenal Lebih Dekat PT Indana
@@ -72,7 +72,7 @@ export default function TentangKamiPage() {
       </Section>
 
       {/* Company Narrative */}
-      <Section background="white" padding="normal">
+      <Section background="dark" padding="normal">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl font-bold mb-6">Sejarah Singkat</h2>
@@ -107,7 +107,7 @@ export default function TentangKamiPage() {
       </Section>
 
       {/* Vision & Mission */}
-      <Section background="light" padding="normal">
+      <Section background="dark" padding="normal">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold mb-10">Visi & Misi</h2>
 
@@ -146,7 +146,7 @@ export default function TentangKamiPage() {
       </Section>
 
       {/* Production Process */}
-      <Section background="white" padding="normal">
+      <Section background="dark" padding="normal">
         <h2 className="text-3xl font-bold text-center mb-12">
           Proses Produksi Berkualitas
         </h2>
@@ -193,7 +193,7 @@ export default function TentangKamiPage() {
       </Section>
 
       {/* Our Team */}
-      <Section background="light" padding="normal">
+      <Section background="dark" padding="normal">
         <h2 className="text-3xl font-bold text-center mb-12">Tim Kami</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (

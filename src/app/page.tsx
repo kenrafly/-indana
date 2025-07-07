@@ -129,7 +129,7 @@ export default function Home() {
       </Section>
 
       {/* Testimonial Section */}
-      <Section background="light" padding="normal">
+      <Section background="dark" padding="normal">
         <h2 className="text-3xl font-bold text-center mb-12">
           Apa Kata Mereka
         </h2>

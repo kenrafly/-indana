@@ -66,7 +66,7 @@ export default function ProdukPage() {
   return (
     <>
       {/* Header Section */}
-      <Section background="light" padding="normal">
+      <Section background="dark" padding="normal">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-6">
             Produk Kami: Pilihan Minyak Goreng Terbaik untuk Kebutuhan Anda
@@ -81,9 +81,9 @@ export default function ProdukPage() {
       </Section>
 
       {/* Products List */}
-      <Section background="white" padding="normal">
+      <Section background="dark" padding="normal">
         <div className="grid md:grid-cols-2 gap-12">
-          {products.map(product => (
+          {products.map((product) => (
             <div
               key={product.id}
               className="bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700"
@@ -142,7 +142,7 @@ export default function ProdukPage() {
       </Section>
 
       {/* Production Process */}
-      <Section background="light" padding="normal">
+      <Section background="dark" padding="normal">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8">
             Proses Produksi Berkualitas
