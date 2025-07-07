@@ -7,14 +7,14 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-yellow-50 py-20 md:py-32">
+      <section className="relative bg-black py-20 md:py-32">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4 leading-tight">
               Minyak Goreng Pilihan Keluarga: Kualitas Terbaik untuk Setiap
               Masakan Anda
             </h1>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl text-gray-300 mb-8">
               Diproses Higienis, Lebih Sehat, Rasa Lebih Lezat
             </p>
             <div className="flex flex-wrap gap-4">
@@ -44,9 +44,9 @@ export default function Home() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Benefit 1 */}
           <div className="text-center flex flex-col items-center">
-            <div className="bg-yellow-100 rounded-full p-4 mb-4 w-20 h-20 flex items-center justify-center">
+            <div className="bg-zinc-900 rounded-full p-4 mb-4 w-20 h-20 flex items-center justify-center">
               <svg
-                className="w-10 h-10 text-yellow-600"
+                className="w-10 h-10 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -59,16 +59,16 @@ export default function Home() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2">Bebas Kolesterol</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-300">
               Aman untuk kesehatan jantung dan pembuluh darah Anda
             </p>
           </div>
 
           {/* Benefit 2 */}
           <div className="text-center flex flex-col items-center">
-            <div className="bg-yellow-100 rounded-full p-4 mb-4 w-20 h-20 flex items-center justify-center">
+            <div className="bg-zinc-900 rounded-full p-4 mb-4 w-20 h-20 flex items-center justify-center">
               <svg
-                className="w-10 h-10 text-yellow-600"
+                className="w-10 h-10 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,16 +77,16 @@ export default function Home() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2">Sumber Vitamin E</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-300">
               Kaya akan vitamin E untuk menjaga kesehatan kulit
             </p>
           </div>
 
           {/* Benefit 3 */}
           <div className="text-center flex flex-col items-center">
-            <div className="bg-yellow-100 rounded-full p-4 mb-4 w-20 h-20 flex items-center justify-center">
+            <div className="bg-zinc-900 rounded-full p-4 mb-4 w-20 h-20 flex items-center justify-center">
               <svg
-                className="w-10 h-10 text-yellow-600"
+                className="w-10 h-10 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -99,16 +99,16 @@ export default function Home() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2">Ekonomis</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-300">
               Tahan lama dengan harga terjangkau untuk seluruh keluarga
             </p>
           </div>
 
           {/* Benefit 4 */}
           <div className="text-center flex flex-col items-center">
-            <div className="bg-yellow-100 rounded-full p-4 mb-4 w-20 h-20 flex items-center justify-center">
+            <div className="bg-zinc-900 rounded-full p-4 mb-4 w-20 h-20 flex items-center justify-center">
               <svg
-                className="w-10 h-10 text-yellow-600"
+                className="w-10 h-10 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +121,7 @@ export default function Home() {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2">Higienis</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-300">
               Diproduksi dalam lingkungan bersih dengan standar tinggi
             </p>
           </div>
@@ -134,19 +134,19 @@ export default function Home() {
           Apa Kata Mereka
         </h2>
         <div className="max-w-3xl mx-auto">
-          <div className="bg-white rounded-lg shadow-lg p-8 relative">
-            <FaRegUser />
-            <div className="text-lg text-gray-700 mb-6 pt-6 pl-10">
+          <div className="bg-black rounded-lg shadow-lg p-8 relative border border-zinc-800">
+            <FaRegUser className="text-yellow-400" />
+            <div className="text-lg text-gray-300 mb-6 pt-6 pl-10">
               "Saya sudah menggunakan minyak goreng Indana selama
               bertahun-tahun. Rasanya sangat netral dan membuat gorengan menjadi
               lebih renyah. Tidak pernah mengecewakan dan selalu menjadi pilihan
               utama untuk keluarga kami."
             </div>
             <div className="flex items-center gap-5">
-              <FaRegUser />
+              <FaRegUser className="text-yellow-400" />
               <div>
                 <p className="font-semibold">Ibu Siti</p>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-400 text-sm">
                   Ibu Rumah Tangga, Jakarta
                 </p>
               </div>
@@ -161,7 +161,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-6">
             Mulai Gunakan Minyak Goreng Berkualitas
           </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
             Tingkatkan kualitas masakan Anda dengan minyak goreng Indana yang
             sehat dan berkualitas tinggi
           </p>

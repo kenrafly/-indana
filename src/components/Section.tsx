@@ -14,9 +14,9 @@ export default function Section({
   padding = "normal",
 }: SectionProps) {
   const bgColors = {
-    white: "bg-white",
-    light: "bg-gray-50",
-    dark: "bg-gray-800 text-white",
+    white: "bg-black text-gray-100",
+    light: "bg-zinc-900 text-gray-200",
+    dark: "bg-black text-white",
   };
 
   const paddingSize = {

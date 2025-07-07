@@ -20,9 +20,9 @@ export default function Button({
     "inline-block px-6 py-3 rounded-full font-medium transition-colors text-center";
 
   const variantStyles = {
-    primary: "bg-yellow-600 hover:bg-yellow-700 text-white",
-    secondary: "bg-gray-800 hover:bg-gray-900 text-white",
-    outline: "border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-50",
+    primary: "bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold",
+    secondary: "bg-gray-700 hover:bg-gray-600 text-white",
+    outline: "border-2 border-yellow-500 text-yellow-500 hover:bg-gray-800",
   };
 
   const buttonClass = `${baseStyles} ${variantStyles[variant]} ${className}`;

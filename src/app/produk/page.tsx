@@ -71,7 +71,7 @@ export default function ProdukPage() {
           <h1 className="text-4xl font-bold mb-6">
             Produk Kami: Pilihan Minyak Goreng Terbaik untuk Kebutuhan Anda
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-300">
             Kami menghadirkan berbagai varian minyak goreng berkualitas tinggi
             untuk memenuhi berbagai kebutuhan memasak Anda. Setiap produk kami
             diproduksi dengan standar kualitas tertinggi untuk memastikan hasil
@@ -83,10 +83,10 @@ export default function ProdukPage() {
       {/* Products List */}
       <Section background="white" padding="normal">
         <div className="grid md:grid-cols-2 gap-12">
-          {products.map((product) => (
+          {products.map(product => (
             <div
               key={product.id}
-              className="bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100"
+              className="bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700"
             >
               <div className="relative h-72 w-full">
                 <Image
@@ -98,12 +98,12 @@ export default function ProdukPage() {
               </div>
               <div className="p-6">
                 <h2 className="text-2xl font-bold mb-3">{product.name}</h2>
-                <p className="text-gray-600 mb-4">{product.description}</p>
+                <p className="text-gray-300 mb-4">{product.description}</p>
 
                 <h3 className="text-lg font-semibold mb-2">Manfaat Utama:</h3>
                 <ul className="list-disc pl-5 mb-6 space-y-1">
                   {product.benefits.map((benefit, index) => (
-                    <li key={index} className="text-gray-600">
+                    <li key={index} className="text-gray-300">
                       {benefit}
                     </li>
                   ))}
@@ -147,7 +147,7 @@ export default function ProdukPage() {
           <h2 className="text-3xl font-bold text-center mb-8">
             Proses Produksi Berkualitas
           </h2>
-          <div className="bg-white p-8 rounded-lg shadow-md">
+          <div className="bg-gray-800 p-8 rounded-lg shadow-md border border-gray-700">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="md:w-1/2">
                 <Image
@@ -159,13 +159,13 @@ export default function ProdukPage() {
                 />
               </div>
               <div className="md:w-1/2">
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-300 mb-4">
                   Minyak goreng Indana diproduksi di fasilitas modern yang
                   menerapkan standar kebersihan dan keamanan pangan tertinggi.
                   Kami menggunakan teknologi pemurnian terkini untuk
                   menghasilkan minyak goreng berkualitas premium.
                 </p>
-                <p className="text-gray-700">
+                <p className="text-gray-300">
                   Setiap batch produksi kami melewati serangkaian tes kualitas
                   yang ketat sebelum dikemas dan didistribusikan ke pasar. Ini
                   memastikan bahwa setiap tetes minyak goreng Indana memenuhi
@@ -183,7 +183,7 @@ export default function ProdukPage() {
           <h2 className="text-3xl font-bold mb-6">
             Tertarik dengan Produk Kami?
           </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Hubungi kami sekarang untuk informasi lebih lanjut atau pemesanan
             dalam jumlah besar
           </p>

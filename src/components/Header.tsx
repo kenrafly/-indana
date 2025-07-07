@@ -11,7 +11,7 @@ export default function Header() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
   return (
-    <header className="bg-white shadow-sm py-4">
+    <header className="bg-black shadow-md py-4 border-b border-gray-800">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="flex items-center">
           <Image
@@ -19,7 +19,7 @@ export default function Header() {
             alt="Indana Logo"
             width={150}
             height={40}
-            className="h-10 w-auto"
+            className="h-10 w-auto invert"
             priority
           />
         </Link>
@@ -27,25 +27,25 @@ export default function Header() {
         <nav className="hidden md:flex space-x-8">
           <Link
             href="/"
-            className="text-gray-800 hover:text-yellow-600 font-medium transition-colors"
+            className="text-gray-300 hover:text-yellow-400 font-medium transition-colors"
           >
             Beranda
           </Link>
           <Link
             href="/produk"
-            className="text-gray-800 hover:text-yellow-600 font-medium transition-colors"
+            className="text-gray-300 hover:text-yellow-400 font-medium transition-colors"
           >
             Produk
           </Link>
           <Link
             href="/tentang-kami"
-            className="text-gray-800 hover:text-yellow-600 font-medium transition-colors"
+            className="text-gray-300 hover:text-yellow-400 font-medium transition-colors"
           >
             Tentang Kami
           </Link>
           <Link
             href="/kontak"
-            className="text-gray-800 hover:text-yellow-600 font-medium transition-colors"
+            className="text-gray-300 hover:text-yellow-400 font-medium transition-colors"
           >
             Kontak
           </Link>
@@ -53,7 +53,7 @@ export default function Header() {
 
         <div className="md:hidden">
           <button
-            className="text-gray-800 hover:text-yellow-600"
+            className="text-gray-300 hover:text-yellow-400"
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
@@ -77,32 +77,32 @@ export default function Header() {
 
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
+        <div className="md:hidden bg-black border-t border-gray-800">
           <nav className="container mx-auto px-4 py-4 space-y-2">
             <Link
               href="/"
-              className="block text-gray-800 hover:text-yellow-600 font-medium transition-colors py-2"
+              className="block text-gray-300 hover:text-yellow-400 font-medium transition-colors py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Beranda
             </Link>
             <Link
               href="/produk"
-              className="block text-gray-800 hover:text-yellow-600 font-medium transition-colors py-2"
+              className="block text-gray-300 hover:text-yellow-400 font-medium transition-colors py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Produk
             </Link>
             <Link
               href="/tentang-kami"
-              className="block text-gray-800 hover:text-yellow-600 font-medium transition-colors py-2"
+              className="block text-gray-300 hover:text-yellow-400 font-medium transition-colors py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Tentang Kami
             </Link>
             <Link
               href="/kontak"
-              className="block text-gray-800 hover:text-yellow-600 font-medium transition-colors py-2"
+              className="block text-gray-300 hover:text-yellow-400 font-medium transition-colors py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Kontak
