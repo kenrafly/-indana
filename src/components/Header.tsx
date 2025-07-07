@@ -23,7 +23,6 @@ export default function Header() {
             priority
           />
         </Link>
-
         <nav className="hidden md:flex space-x-8">
           <Link
             href="/"
