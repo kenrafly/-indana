@@ -15,7 +15,7 @@ export default function ProdukPage() {
       name: "Minyak Goreng Sawit Murni 1 Liter",
       description:
         "Minyak goreng berkualitas tinggi dalam kemasan praktis 1 liter, cocok untuk kebutuhan rumah tangga sehari-hari.",
-      image: "/minyak.jpg",
+      image: "/cooking-oil.png",
       benefits: [
         "Kaya Vitamin A & D",
         "Tidak Mudah Tengik",
@@ -27,7 +27,7 @@ export default function ProdukPage() {
       name: "Minyak Goreng Sawit Murni 2 Liter",
       description:
         "Minyak goreng berkualitas tinggi dalam kemasan ekonomis 2 liter, lebih hemat untuk keluarga.",
-      image: "/minyak.jpg",
+      image: "/cooking-oil.png",
       benefits: [
         "Kaya Vitamin A & D",
         "Tidak Mudah Tengik",
@@ -40,7 +40,7 @@ export default function ProdukPage() {
       name: "Minyak Goreng Sawit Murni 5 Liter",
       description:
         "Minyak goreng berkualitas premium dalam kemasan jerigen 5 liter, solusi ekonomis untuk usaha kuliner.",
-      image: "/minyak.jpg",
+      image: "/cooking-oil.png",
       benefits: [
         "Kaya Vitamin A & D",
         "Tidak Mudah Tengik",
@@ -53,7 +53,7 @@ export default function ProdukPage() {
       name: "Minyak Goreng Sawit Premium 1 Liter",
       description:
         "Varian premium minyak goreng Indana dengan kandungan nutrisi lebih tinggi, dalam kemasan botol 1 liter.",
-      image: "/minyak.jpg",
+      image: "/cooking-oil.png",
       benefits: [
         "Kaya Omega-3 dan Omega-6",
         "Bebas Kolesterol 100%",

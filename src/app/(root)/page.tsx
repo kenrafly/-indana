@@ -135,7 +135,6 @@ export default function Home() {
         </h2>
         <div className="max-w-3xl mx-auto">
           <div className="bg-black rounded-lg shadow-lg p-8 relative border border-zinc-800">
-            <FaRegUser className="text-yellow-400" />
             <div className="text-lg text-gray-300 mb-6 pt-6 pl-10">
               "Saya sudah menggunakan minyak goreng Indana selama
               bertahun-tahun. Rasanya sangat netral dan membuat gorengan menjadi
